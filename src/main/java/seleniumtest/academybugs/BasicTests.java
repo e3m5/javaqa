@@ -20,13 +20,7 @@ public class BasicTests extends TestTemplate {
         page = "https://academybugs.com/find-bugs/";
     }
 
-    @AfterClass
-    public void tearDown() {
-        driver.close();
-        driver.quit();
-    }
-
-    @Test(enabled = false)
+    @Test(enabled = true, priority = 1)
     public void openShop() {
         WebDriver chrome = ChromeDriverSingleton.getChromeDriver();
         chrome.get(page);
@@ -34,7 +28,7 @@ public class BasicTests extends TestTemplate {
 
 
 
-    @Test
+    @Test(priority = 2)
     public void getItems() {
         WebDriver chrome = ChromeDriverSingleton.getChromeDriver();
         chrome.get(page);
