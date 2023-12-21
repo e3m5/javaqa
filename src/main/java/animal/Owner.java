@@ -1,8 +1,3 @@
-
-
-
-
-
 package animal;
 
 import java.util.ArrayList;
@@ -43,7 +38,6 @@ public class Owner {
 
 
 }
-
 
 
 

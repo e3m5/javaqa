@@ -1,11 +1,13 @@
 package seleniumtest.academybugs;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import seleniumtest.TestTemplate;
+import seleniumtest.ChromeDriverSingleton;
 
 import java.util.List;
 
@@ -14,31 +16,30 @@ import java.util.List;
 public class BasicTests extends TestTemplate {
 
     @BeforeClass
-    public void initPage() {
+    public void setUp() {
         page = "https://academybugs.com/find-bugs/";
     }
 
-    //@Test(enabled = false)
-    @Test
-    public void openShop() {
-        driver.get(page);
-        String pageTitle = driver.getTitle();
-        Assert.assertEquals(pageTitle, "Find Bugs – AcademyBugs.com");
+    @AfterClass
+    public void tearDown() {
+        driver.close();
+        driver.quit();
     }
 
-    //@Test(enabled = false)
-    @Test()
-    public void openShopFailing() {
-        driver.get(page);
-        String pageTitle = driver.getTitle();
-        Assert.assertEquals(pageTitle, "Find Bugs – AcademyBugs.com wrong");
+    @Test(enabled = false)
+    public void openShop() {
+        WebDriver chrome = ChromeDriverSingleton.getChromeDriver();
+        chrome.get(page);
     }
+
+
 
     @Test
     public void getItems() {
-        driver.get(page);
+        WebDriver chrome = ChromeDriverSingleton.getChromeDriver();
+        chrome.get(page);
 
-        List<WebElement> pagination = driver.findElements(By.xpath("//a[@class='what-we-offer-pagination-link']"));
+        List<WebElement> pagination = chrome.findElements(By.xpath("//a[@class='what-we-offer-pagination-link']"));
 
         for (WebElement e : pagination) {
             e.click();

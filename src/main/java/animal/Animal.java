@@ -1,4 +1,3 @@
-
 package animal;
 
 import java.util.List;

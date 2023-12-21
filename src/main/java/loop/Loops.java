@@ -1,6 +1,5 @@
 
-
-package loop;
+package oop;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,7 +10,7 @@ public class Loops {
     static String[] tablica; //deklaracja zmiennej
 
     static List<String> lista = new ArrayList<>();
-    static List<String> lista2 = Arrays.asList("aa", "bb");
+    static List<String> lista2 = Arrays.asList("aa","bb");
 
     //psvm -> public static void main(String[] args) {
     public static void main(String[] args) {
@@ -24,13 +23,14 @@ public class Loops {
         tablica[2] = str3;
 
 
+
         // pętla for(each) -> iteracja po wszystkich elementach zbioru
         for (String s : tablica) {
             // sout ->  System.out.println
             System.out.println(s);
         }
 
-        for (int counter = 1; counter <= 10; counter++) {
+        for (int counter = 1; counter <= 10 ; counter++) {
             System.out.println("wow! " + counter);
         }
 

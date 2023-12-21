@@ -1,4 +1,3 @@
-
 package animal;
 
 public class Food {
@@ -13,4 +12,3 @@ public class Food {
         this.calories = calories;
     }
 }
-
